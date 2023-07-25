@@ -10,7 +10,7 @@ services:
       - POSGRES_PORT
 
   flyway:
-    image: flyway/flyway:latest
+    image: flyway/flyway:7.7.0
     container_name: migration_flyway
     environment:
       - FLYWAY_USER=${POSTGRES_USER}
