@@ -21,6 +21,11 @@ services:
     environment:
       - BIND_IP
       - BIND_PORT
+      - POSTGRES_SERVER
+      - POSTGRES_USER
+      - POSTGRES_PASSWORD
+      - POSTGRES_DB
+      - POSTGRES_PORT
     expose:
       - ${BIND_PORT}
     ports:
@@ -41,7 +46,7 @@ services:
       - ${POSTGRES_PORT}
 
   flyway:
-    image: flyway/flyway:latest
+    image: flyway/flyway:7.7.0
     container_name: migration_flyway
     environment:
       - FLYWAY_USER=${POSTGRES_USER}

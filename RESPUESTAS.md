@@ -6,10 +6,41 @@ Por cada etapa agrega una sección abajo y escribe las respuestas a las pregunta
 
 ## ETAPA 1
 
-Escribe respuestas de la etapa 1 acá
+* ¿Cuál es la diferencia entre los archivos con el verbo Create con los archivos con el verbo Add?
+  
+    Los archivos Create tienen los comandos SQL para crear las tablas, mientras los Add tienen las sentencias para insertar datos en las tablas recien creadas
+
+* ¿Cómo se llama el servicio que se declara en el archivo docker-compose.yml?
+  
+    flyway
+
+* ¿Cuál es el comando que se ejecuta en el servicio declarado?
+  
+    migrate
 
 ## ETAPA 2
 
-Escribe respuestas de la etapa 2 acá
+* ¿Qué pasa si cambias el nombre del servicio de postgres a db? ¿Qué otros cambios tendrías que hacer?
 
-...
+    Si se cambia el nombre del servicio tambien hay que actualizar en ´docker-compose´ el valor para "depends_on" y en el archivo .env el valor de "POSTGRES_SERVER"
+
+## ETAPA 3
+
+  **Revisa el archivo movies-api/Dockerfile.**
+
+  * ¿Qué te llama la atención?
+
+    El archivo Dockerfile contiene las instrucciones para levantar la app contenida en "movies-api"
+
+  **Revisa el archivo docker-compose.yml.**
+
+  * ¿Cómo se relacionan el archivo docker-compose.yml y el archivo movies-api/Dockerfile?
+
+    Desde el archivo docker-compose se invoca y levanta el contenedor y la API contenida en movies-api 
+
+
+  * ¿Qué crees que hace el atributo context debajo de build (está en la linea 6 del archivo docker-compose.yml)?
+
+    Indica el directorio donde puede encontrar los recursos a que se hace referencia para levantar movies-api
+
+
