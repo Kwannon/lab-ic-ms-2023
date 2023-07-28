@@ -9,6 +9,11 @@ services:
     environment:
       - BIND_IP
       - BIND_PORT
+      - POSTGRES_SERVER
+      - POSTGRES_USER
+      - POSTGRES_PASSWORD
+      - POSTGRES_DB
+      - POSTGRES_PORT
     expose:
       - ${BIND_PORT}
     ports:
