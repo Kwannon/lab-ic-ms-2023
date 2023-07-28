@@ -20,6 +20,7 @@ Por cada etapa agrega una sección abajo y escribe las respuestas a las pregunta
 
 ## ETAPA 2
 
-Escribe respuestas de la etapa 2 acá
+* ¿Qué pasa si cambias el nombre del servicio de postgres a db? ¿Qué otros cambios tendrías que hacer?
 
-...
+    Si se cambia el nombre del servicio tambien hay que actualizar en ´docker-compose´ el valor para "depends_on" y en el archivo .env el valor de "POSTGRES_SERVER"
+
