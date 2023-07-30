@@ -1,25 +1,42 @@
 version: '3'
 services:
+  movies-front:
+    container_name: movies_front_container
+    build: movies-front
+    command: npm start
+    volumes:
+      - ./movies-front:/usr/app
+      - /usr/app/node_modules
+    depends_on:
+      - movies-api
+    environment:
+      - PORT=${REACT_PORT}
+      - REACT_APP_API_URI=http://movies-api:${BIND_PORT}
+    expose:
+      - ${REACT_PORT}
+    ports:
+      - ${REACT_PORT}:${REACT_PORT}
+   
   movies-api:
     container_name: movies_api_container
-    build: 
-      context: ./movies-api
+    build: movies-api
     image: movies_api
     command: "/movies-api -b ${BIND_IP} -p ${BIND_PORT}"
     environment:
       - BIND_IP
       - BIND_PORT
-      - POSTGRES_SERVER
       - POSTGRES_USER
       - POSTGRES_PASSWORD
       - POSTGRES_DB
       - POSTGRES_PORT
+      - POSTGRES_SERVER
     expose:
       - ${BIND_PORT}
     ports:
       - ${BIND_PORT}:${BIND_PORT}
     depends_on:
       - postgres
+    restart: always
 
   postgres:
     image: postgres:15.3
@@ -29,6 +46,7 @@ services:
       - POSTGRES_PASSWORD
       - POSTGRES_DB
       - POSTGRES_PORT
+      - POSTGRES_SERVER
     expose:
       - ${POSTGRES_PORT}
 

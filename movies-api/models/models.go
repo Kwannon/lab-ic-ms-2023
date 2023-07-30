@@ -6,10 +6,10 @@ type Director struct {
 }
 
 type Movie struct {
-	ID          uint   `json:"id" gorm:"primaryKey"`
-	Title       string `json:"title"`
-	Year        int    `json:"year"`
-	Description string `json:"description" gorm:"text"`
-	DirectorID  int    `json:"-"`
-	Director    Director
+	ID          uint     `json:"id,string" gorm:"primaryKey"`
+	Title       string   `json:"title"`
+	Year        int      `json:"year,string"`
+	Description string   `json:"description" gorm:"text"`
+	DirectorID  int      `json:"director_id,string"`
+	Director    Director `json:"director"`
 }

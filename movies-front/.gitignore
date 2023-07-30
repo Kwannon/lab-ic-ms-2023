@@ -1,18 +1,15 @@
-.env
-/docker-compose-good.yml
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
 /node_modules
-/movies-front/node_modules
-/movies-front/.pnp
+/.pnp
 .pnp.js
 
 # testing
-/movies-front/coverage
 /coverage
 
 # production
-/movies-front/build
+/build
 
 # misc
 .DS_Store
