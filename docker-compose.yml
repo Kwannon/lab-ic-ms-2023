@@ -19,8 +19,7 @@ services:
    
   movies-api:
     container_name: movies_api_container
-    build: 
-      context: ./movies-api
+    build: movies-api
     image: movies_api
     command: "/movies-api -b ${BIND_IP} -p ${BIND_PORT}"
     environment:
