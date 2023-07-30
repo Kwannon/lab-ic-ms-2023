@@ -11,6 +11,7 @@ services:
       - movies-api
     environment:
       - PORT=${REACT_PORT}
+      - REACT_APP_API_URI=http://movies-api:${BIND_PORT}
     expose:
       - ${REACT_PORT}
     ports:
@@ -25,11 +26,11 @@ services:
     environment:
       - BIND_IP
       - BIND_PORT
-      - POSTGRES_SERVER
       - POSTGRES_USER
       - POSTGRES_PASSWORD
       - POSTGRES_DB
       - POSTGRES_PORT
+      - POSTGRES_SERVER
     expose:
       - ${BIND_PORT}
     ports:
@@ -46,6 +47,7 @@ services:
       - POSTGRES_PASSWORD
       - POSTGRES_DB
       - POSTGRES_PORT
+      - POSTGRES_SERVER
     expose:
       - ${POSTGRES_PORT}
 
