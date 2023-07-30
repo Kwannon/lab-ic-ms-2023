@@ -38,9 +38,20 @@ Por cada etapa agrega una sección abajo y escribe las respuestas a las pregunta
 
     Desde el archivo docker-compose se invoca y levanta el contenedor y la API contenida en movies-api 
 
-
   * ¿Qué crees que hace el atributo context debajo de build (está en la linea 6 del archivo docker-compose.yml)?
 
     Indica el directorio donde puede encontrar los recursos a que se hace referencia para levantar movies-api
 
+
+## Etapa 4
+
+  * Compara los archivos `Dockerfile` de `movies-api` y `movies-front`.
+
+    Son muy distintos. Mientras el del front depende de NPM para levantar la app basicamente, el otro contruye e instala el backend instruccion por instruccion.
+
+  * Compara el atributo `build` del servicio `movies-api` con el de `movies-front`. 
+¿Cuál es la diferencia? 
+¿Qué pasa si los dejas iguales?
+
+   Son diferentes maneras de hacer referencia a una ubicación, si se dejan igual sigue funcionando
 
